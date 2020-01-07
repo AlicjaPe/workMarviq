@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DB</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="node_modules/chart.js/dist/Chart.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <header>
+      <h1>DB APPLICATION</h1>
+      <p>
+        <span1>UPTIME</span1>/
+        <span2>DOWNTIME</span2>
+      </p>
+    </header>
+
+    <section>
+      <h2> MACHINE STATUS</h2>
+
+      <!-- The grid: three columns -->
+      <div class="row">
+        <div class="column" onclick="openTab('b1');" style="background:rgb(62, 184, 62);">2x2</div>
+        <div class="column" onclick="openTab('b2');" style="background:rgb(31, 97, 241);">3x2</div>
+        <div class="column" onclick="openTab('b3');" style="background:rgb(223, 13, 13);">4x2</div>
+      </div>
+
+      <!-- The expanding grid (hidden by default) -->
+      <div id="b1" class="containerTab" style="display:none;background:rgb(62, 184, 62);text-align:left">
+
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+
+
+        <!-- here i create canvas for chart and that chart what is inside is working :) -->
+
+        <canvas id="myChart" width="900" height="400"></canvas>
+
+        <script type="text/javascript">
+          var ctx = document.getElementById("myChart");
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ["OEE", "Performance", "Availability", "Quality"],
+              datasets: [{
+                label: '# Machine 2x2',
+                data: [0.76957980967078, 0.78955277777778, 1.0092592592593, 0.9657612079975],
+
+                backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)'
+
+
+                ],
+
+                borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)'
+
+
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+        </script>
+      </div>
+
+
+      <!-- in the navigation for block 3x2 and 4x2 should to be individual chart, unfortunately...adding code in the same way like for block 2x2 chart doesnt work so i create just empty canvas for 3x2 and for chart 4x2 I just put the information what should be there -->
+
+      <div id="b2" class="containerTab" style="display:none;background:rgb(31, 97, 241);text-align:left">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <canvas id="myChart" width="900" height="400"></canvas>
+      </div>
+
+      <div id="b3" class="containerTab" style="display:none;background:rgb(223, 13, 13);text-align:left;">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+        <p> here should be chart for Machine 4x3</p>
+      </div>
+
+
+
+    </section>
+    <div>
+
+      <!-- in Footer i add some information about company -->
+      <footer>
+        OGEL Company in Denmark - Plastic building blocks.
+      </footer>
+    </div>
+
+</body>
+
+</html>

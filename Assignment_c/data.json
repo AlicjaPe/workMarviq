@@ -1,0 +1,29 @@
+//fie with data.. what i should to use for charts but I am still learning so I don`t reach this level yet :(
+
+{
+  "Server": [{
+    "MACHINE": "2x2 brick mould",
+    "DATETIME_FROM": "2018-01-07 00:00:00",
+    "DATETIME_TO": "2018-01-08 00:00:00",
+    "PERFORMANCE": 0.78955277777778,
+    "AVAILABILITY": 1.0092592592593,
+    "QUALITY": 0.9657612079975,
+    "OEE": 0.76957980967078
+}, {
+    "MACHINE": "3x2 brick mould",
+    "DATETIME_FROM": "2018-01-07 00:00:00",
+    "DATETIME_TO": "2018-01-08 00:00:00",
+    "PERFORMANCE": 0.81475277777778,
+    "AVAILABILITY": 1.0555555555556,
+    "QUALITY": 0.96550078244594,
+    "OEE": 0.83034691358025
+}, {
+    "MACHINE": "4x2 brick mould",
+    "DATETIME_FROM": "2018-01-07 00:00:00",
+    "DATETIME_TO": "2018-01-08 00:00:00",
+    "PERFORMANCE": 0.80623472222222,
+    "AVAILABILITY": 1.0231481481481,
+    "QUALITY": 0.96536885281203,
+    "OEE": 0.79633041409465
+}]
+}
