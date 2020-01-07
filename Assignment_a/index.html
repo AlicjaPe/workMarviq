@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DB</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/chart.js/dist/Chart.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+
+
+        <header>
+            <h1>DB APPLICATION</h1>
+            <p>
+                <span1>UPTIME</span1>/
+                <span2>DOWNTIME</span2>
+            </p>
+        </header>
+
+        <section>
+            <h2> MACHINE STATUS</h2>
+
+
+            <!--Navigation for web app. The data inside should be return from other source (data.json) but i dont know how to do that :( so i just write them. -->
+            <!-- The grid: three columns -->
+            <div class="row">
+                <div class="column" onclick="openTab('b1');" style="background:rgb(62, 184, 62);">2x2</div>
+                <div class="column" onclick="openTab('b2');" style="background:rgb(31, 97, 241);">3x2</div>
+                <div class="column" onclick="openTab('b3');" style="background:rgb(223, 13, 13);">4x2</div>
+            </div>
+
+            <!-- The expanding grid (hidden by default) -->
+            <div id="b1" class="containerTab" style="display:none;background:rgb(62, 184, 62);text-align:left">
+
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+                <p><strong>PRODUCTION: </strong> 549014<br><br>
+                    <strong>SCRAP:</strong> 0.034238792002505 <br><br>
+                    <strong>DATE/TIME from:</strong> 2018-01-07, 00:00:00<br><br>
+                    <strong>DATE/TIME to:</strong> 2018-01-08, 00:00:00<br><br>
+                </p>
+
+            </div>
+
+            <div id="b2" class="containerTab" style="display:none;background:rgb(31, 97, 241);text-align:left">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                <p><strong>PRODUCTION:</strong> 566384<br><br>
+                    <strong>SCRAP:</strong> 0.034499217554064<br><br>
+                    <strong>DATE/TIME from:</strong> 2018-01-07, 00:00:00<br><br>
+                    <strong>DATE/TIME to:</strong> 2018-01-08, 00:00:00<br><br>
+                </p>
+
+            </div>
+
+            <div id="b3" class="containerTab" style="display:none;background:rgb(223, 13, 13);text-align:left;">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                <p><strong>PRODUCTION:</strong> 560386<br><br>
+                    <strong>SCRAP:</strong> 0.034631147187974<br><br>
+                    <strong>DATE/TIME from:</strong> 2018-01-07, 00:00:00<br><br>
+                    <strong>DATE/TIME to:</strong> 2018-01-08, 00:00:00<br><br>
+                </p>
+
+            </div>
+
+        </section>
+        <!-- IN DASHBOARD SHOUD TO BE HERE A CHART, but he doesn`t work :( so here is the photo of chart example what use to looks and works properly like in DASHBOARD.-->
+        <div class="chart">
+            <img src="charts.jpg" alt="charts" />
+        </div>
+
+        <br>
+        <br>
+
+        <!-- creating canvas for chart-->
+        <canvas id="myChart" width="200" height="100"
+            style="background:white;text-align:justify;border:1px solid #000000;">src= "chart.js";
+        </canvas>
+
+
+
+        <!-- That script just show that the canvas for sure works and draw just a line-->
+        <script>
+            var c = document.getElementById("myChart");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.stroke();
+
+            /*   here is the code for line chart , unfortunately my chart doesn`t work properly but here is some code */
+
+            /*  
+            import Chart from 'chart.js';
+            var ctx = document.getElementById('myChart').getContext('2d');
+               var chart = new Chart(ctx, {
+                   //  The type of chart we want to create
+                   type: 'line',
+
+                   //   The data for our dataset
+                   data: {
+                       labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                           '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
+                           '24'
+                       ],
+                       datasets: [{
+                           label: 'Production',
+                           backgroundColor: 'rgb(255, 99, 132)',
+                           borderColor: 'rgb(255, 99, 132)',
+                           data: [0, 10, 5, 2, 20, 30, 45]
+                       }]
+                   },
+
+                   // Configuration options go here
+                   options: {
+                       scales: {
+                           yAxes: [{
+                               ticks: {
+                                   beginAtZero: true
+                               }
+                           }]
+                       }
+                   }
+               });   */
+        </script>
+
+
+
+
+        <!-- in Footer i add some information about company -->
+        <footer>
+            OGEL Company in Denmark - Plastic building blocks.
+        </footer>
+
+    </div>
+
+
+
+</body>
+
+</html>
